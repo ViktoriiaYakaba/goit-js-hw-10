@@ -32,6 +32,7 @@ const options = {
   },
 };
 
+
 let countdownInterval;
 
 function startTimer() {
