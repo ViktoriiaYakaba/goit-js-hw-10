@@ -9,7 +9,7 @@ const daysData = document.querySelector('[data-days]');
 const hoursData = document.querySelector('[data-hours]');
 const minutesData = document.querySelector('[data-minutes]');
 const secondsData = document.querySelector('[data-seconds]');
-
+const timer = document.querySelector(".timer");
 
 let userSelectedDate;
   
@@ -51,7 +51,7 @@ if (!isNaN(days) && !isNaN(hours) && !isNaN(minutes) && !isNaN(seconds)) {
     secondsData.textContent = addLeadingZero(seconds);
   }
 
-  if (currentDate <= 0) {
+  if (remainingTime <= 0) {
     stopTimer();
   }
 };
@@ -65,16 +65,17 @@ startButton.addEventListener("click", ()=> {
 function stopTimer() {
   if (countdownInterval) {
     
-  clearInterval(countdownInterval);
+  clearIntervavl(countdownInterval);
 
     daysData.textContent = '00';
     hoursData.textContent = '00';
     minutesData.textContent = '00';
     secondsData.textContent = '00';
-
+    
     countdownInterval = null;
-  }
+  } 
 };
+
 
 function addLeadingZero(value) {
   return String(value).padStart(2, '0');
