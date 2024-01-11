@@ -65,7 +65,7 @@ startButton.addEventListener("click", ()=> {
 function stopTimer() {
   if (countdownInterval) {
     
-  clearIntervavl(countdownInterval);
+  clearInterval(countdownInterval);
 
     daysData.textContent = '00';
     hoursData.textContent = '00';
